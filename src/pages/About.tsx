@@ -9,21 +9,21 @@ const About = () => {
       name: "Vinayak Palse",
       role: "Full-Stack Developer",
       expertise: "React, Node.js,Problem Solving",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      image: "vinayakwg.png",
       description: "Full-stack developer with 8+ years of experience building scalable web applications."
     },
     {
       name: "Shivam Mishal",
       role: "Full-Stack Developer",
       expertise: "Design Systems, Figma, User Research",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      image: "shivam.png",
       description: "Creative designer focused on creating intuitive and beautiful user experiences."
     },
     {
       name: "Pranav Moralwar",
       role: "Full-Stack Developer",
       expertise: "Backend Integration, PostgreSQL, Docker",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      image: "pranav.png",
       description: "Backend expert specializing in automation systems and database architecture."
     }
   ];
