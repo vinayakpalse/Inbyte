@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { Users, Award, Coffee, Rocket, CheckCircle } from 'lucide-react';
 
+// Import images
+import heroImage from '../assets/images/waterm.png';
+import vinayakImage from '../assets/images/vinayakwg.png';
+import shivamImage from '../assets/images/shivam.png';
+import pranavImage from '../assets/images/pranav.png';
+
 const About = () => {
   const [hoveredMember, setHoveredMember] = useState<number | null>(null);
 
@@ -8,22 +14,22 @@ const About = () => {
     {
       name: "Vinayak Palse",
       role: "Full-Stack Developer",
-      expertise: "React, Node.js,Problem Solving",
-      image: "vinayakwg.png",
+      expertise: "React, Node.js, Problem Solving",
+      image: vinayakImage,
       description: "Full-stack developer with 8+ years of experience building scalable web applications."
     },
     {
       name: "Shivam Mishal",
       role: "Full-Stack Developer",
       expertise: "Design Systems, Figma, User Research",
-      image: "shivam.png",
+      image: shivamImage,
       description: "Creative designer focused on creating intuitive and beautiful user experiences."
     },
     {
       name: "Pranav Moralwar",
       role: "Full-Stack Developer",
       expertise: "Backend Integration, PostgreSQL, Docker",
-      image: "pranav.png",
+      image: pranavImage,
       description: "Backend expert specializing in automation systems and database architecture."
     }
   ];
@@ -47,33 +53,32 @@ const About = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('waterm.png')" }}>
-  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/90 via-white/80 to-purple-50/90"></div>
-  
-  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-        Meet Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Expert Team</span>
-      </h1>
-      <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-        We're passionate web developers and automation experts dedicated to helping small businesses succeed in the digital world.
-      </p>
-    </div>
+      <section className="relative py-20 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${heroImage})` }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/90 via-white/80 to-purple-50/90"></div>
 
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-      {stats.map((stat, index) => (
-        <div key={index} className="text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl text-blue-600 mb-4">
-            {stat.icon}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+              Meet Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Expert Team</span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              We're passionate web developers and automation experts dedicated to helping small businesses succeed in the digital world.
+            </p>
           </div>
-          <div className="text-4xl font-bold text-gray-900 mb-2">{stat.number}</div>
-          <div className="text-gray-600 font-medium">{stat.label}</div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
 
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl text-blue-600 mb-4">
+                  {stat.icon}
+                </div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">{stat.number}</div>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Team Members */}
       <section className="py-20 bg-white">
@@ -86,7 +91,6 @@ const About = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-center">
-
             {teamMembers.map((member, index) => (
               <div
                 key={index}
@@ -103,12 +107,12 @@ const About = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  
+
                   <div className="text-center">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
                     <p className="text-blue-600 font-medium mb-3">{member.role}</p>
                     <p className="text-sm text-gray-500 mb-4">{member.expertise}</p>
-                    
+
                     <div className={`transition-all duration-300 ${
                       hoveredMember === index ? 'opacity-100 max-h-20' : 'opacity-0 max-h-0'
                     } overflow-hidden`}>
@@ -127,13 +131,11 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Our Expertise & Technologies
-              </h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Expertise & Technologies</h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 We stay current with the latest technologies and best practices to deliver cutting-edge solutions for your business.
               </p>
-              
+
               <div className="space-y-6">
                 {skills.map((skill, index) => (
                   <div key={index} className="space-y-2">
@@ -171,7 +173,7 @@ const About = () => {
                   ))}
                 </div>
               </div>
-              
+
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-200 to-purple-200 rounded-full opacity-50 animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-green-200 to-teal-200 rounded-full opacity-50 animate-bounce"></div>

@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Globe, Palette, Shield, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
+// Import images
+import heroImage from '../assets/images/waterm.png'; // make sure waterm.png is in src/assets/images
+
 const Home = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
@@ -77,7 +80,7 @@ const Home = () => {
       {/* Hero Section */}
       <section
         className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/waterm.png')" }}
+        style={{ backgroundImage: `url(${heroImage})` }}
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/40"></div>
@@ -105,16 +108,6 @@ const Home = () => {
                 View Our Work
               </Link>
             </div>
-
-            {/* Stats */}
-            {/* <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-12">
-              {stats.map((stat, index) => (
-                <div key={index} className="bg-white/20 rounded-2xl p-6 shadow-lg backdrop-blur-md">
-                  <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-white font-medium">{stat.label}</div>
-                </div>
-              ))}
-            </div> */}
           </div>
         </div>
       </section>
@@ -159,64 +152,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Testimonials */}
-      {/* <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600">Real results from real businesses</p>
-          </div>
-
-          <div className="relative max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 md:p-12">
-              <div className="flex justify-center mb-4">
-                {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              <blockquote className="text-2xl text-gray-800 text-center mb-8 leading-relaxed">
-                "{testimonials[currentTestimonial].content}"
-              </blockquote>
-              <div className="text-center">
-                <p className="font-semibold text-xl text-gray-900">
-                  {testimonials[currentTestimonial].name}
-                </p>
-                <p className="text-blue-600 font-medium">
-                  {testimonials[currentTestimonial].business}
-                </p>
-              </div>
-            </div>
-
-            {/* Navigation */}
-            {/* <div className="flex justify-center items-center space-x-4 mt-8">
-              <button
-                onClick={prevTestimonial}
-                className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow duration-200"
-              >
-                <ChevronLeft className="w-6 h-6 text-gray-600" />
-              </button>
-              <div className="flex space-x-2">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentTestimonial(index)}
-                    className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                      index === currentTestimonial ? 'bg-blue-600' : 'bg-gray-300'
-                    }`}
-                  />
-                ))}
-              </div>
-              <button
-                onClick={nextTestimonial}
-                className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow duration-200"
-              >
-                <ChevronRight className="w-6 h-6 text-gray-600" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section> */} 
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">

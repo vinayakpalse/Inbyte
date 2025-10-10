@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { X, ExternalLink, Filter } from 'lucide-react';
 
-
+import heroImage from '../assets/images/waterm.png';
 const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [filter, setFilter] = useState('all');
@@ -86,7 +86,7 @@ const Portfolio = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('waterm.png')" }}>
+      <section className="relative py-20 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${heroImage})` }}>
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/90 via-white/80 to-purple-50/90"></div>
 
