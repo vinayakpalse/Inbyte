@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { X, ExternalLink, Filter } from 'lucide-react';
+
 
 const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
@@ -76,27 +79,27 @@ const Portfolio = () => {
     { id: 'fitness', label: 'Fitness & Health' }
   ];
 
-  const filteredProjects = filter === 'all' 
-    ? projects 
+  const filteredProjects = filter === 'all'
+    ? projects
     : projects.filter(project => project.category === filter);
 
   return (
     <div className="pt-16">
       {/* Hero Section */}
-<section className="relative py-20 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('waterm.png')" }}>
-  {/* Gradient overlay */}
-  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/90 via-white/80 to-purple-50/90"></div>
+      <section className="relative py-20 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('waterm.png')" }}>
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/90 via-white/80 to-purple-50/90"></div>
 
-  {/* Content */}
-  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-      Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Portfolio</span>
-    </h1>
-    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-      Discover how we've helped businesses transform their digital presence with beautiful websites and powerful automation systems.
-    </p>
-  </div>
-</section>
+        {/* Content */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Portfolio</span>
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Discover how we've helped businesses transform their digital presence with beautiful websites and powerful automation systems.
+          </p>
+        </div>
+      </section>
 
 
       {/* Filter Tabs */}
@@ -107,11 +110,10 @@ const Portfolio = () => {
               <button
                 key={category.id}
                 onClick={() => setFilter(category.id)}
-                className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                  filter === category.id
-                    ? 'bg-white text-blue-600 shadow-md'
-                    : 'text-gray-600 hover:text-blue-600'
-                }`}
+                className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${filter === category.id
+                  ? 'bg-white text-blue-600 shadow-md'
+                  : 'text-gray-600 hover:text-blue-600'
+                  }`}
               >
                 {category.label}
               </button>
@@ -145,11 +147,11 @@ const Portfolio = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
                   <p className="text-gray-600 mb-4 line-clamp-2">{project.description}</p>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.slice(0, 3).map((tech, i) => (
                       <span
@@ -185,31 +187,37 @@ const Portfolio = () => {
                 <X className="w-6 h-6" />
               </button>
             </div>
-            
+
             <div className="p-6">
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
                 className="w-full h-80 object-cover rounded-2xl mb-6"
               />
-              
+
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">Project Overview</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     {selectedProject.description}
                   </p>
-                  
+
                   <div className="mb-6">
                     <h4 className="font-semibold text-gray-900 mb-3">Client</h4>
                     <p className="text-gray-600">{selectedProject.client}</p>
                   </div>
-                  
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-xl font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-200">
-                    Request Similar Project
-                  </button>
+
+                  <Link
+                    to="/contact"
+                    onClick={() => setSelectedProject(null)} 
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-xl font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2"
+                  >
+                    <span>Request Similar Project</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+
                 </div>
-                
+
                 <div>
                   <div className="mb-6">
                     <h4 className="font-semibold text-gray-900 mb-3">Technologies Used</h4>
@@ -224,7 +232,7 @@ const Portfolio = () => {
                       ))}
                     </div>
                   </div>
-                  
+
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-3">Key Features</h4>
                     <div className="space-y-2">

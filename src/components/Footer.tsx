@@ -74,15 +74,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">hello@webcraft.dev</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-gray-300">inbyte.access@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">San Francisco, CA</span>
+                <span className="text-gray-300">Pune</span>
               </div>
             </div>
           </div>
@@ -163,7 +159,7 @@ const Footer = () => {
             <p className="text-gray-400 text-sm">
                Inbyte. All rights reserved. Built with ❤️ for small businesses.
             </p>
-            <div className="flex items-center space-x-6 mt-4 md:mt-0">
+            {/* <div className="flex items-center space-x-6 mt-4 md:mt-0">
               <div className="flex space-x-4">
                 {['LinkedIn', 'Twitter', 'GitHub', 'Instagram'].map((social, index) => (
                   <a
@@ -175,7 +171,7 @@ const Footer = () => {
                   </a>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
